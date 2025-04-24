@@ -1,11 +1,13 @@
 
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import RoomNavigation from "@/components/RoomNavigation";
 import Bedroom from "@/components/rooms/Bedroom";
 import Bathroom from "@/components/rooms/Bathroom";
 import LivingRoom from "@/components/rooms/LivingRoom";
 import Kitchen from "@/components/rooms/Kitchen";
 import Character from "@/components/Character";
+import { Button } from "@/components/ui/button";
 
 type Room = "bedroom" | "bathroom" | "livingroom" | "kitchen";
 
@@ -78,7 +80,13 @@ const Index = () => {
         <h1 className="text-3xl font-bold text-center mb-4">Симулятор жизни</h1>
         
         <div className="bg-white rounded-lg shadow-lg p-4 md:p-8 flex-1 flex flex-col">
-          <RoomNavigation currentRoom={currentRoom} onChangeRoom={setCurrentRoom} />
+          <div className="flex justify-between items-center">
+            <RoomNavigation currentRoom={currentRoom} onChangeRoom={setCurrentRoom} />
+            
+            <Link to="/paper-plane">
+              <Button>Бумажный самолетик →</Button>
+            </Link>
+          </div>
           
           <div className="flex-1 relative mt-4 rounded-lg overflow-hidden bg-blue-50 border-2 border-slate-200">
             {renderRoom()}
