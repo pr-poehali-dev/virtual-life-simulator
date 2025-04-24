@@ -61,6 +61,16 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Новые цвета для улучшенной темы
+				room: {
+					wall: '#E8EDDF',
+					floor: '#7A6C5D',
+					accent: '#9b87f5',
+					furniture: '#7E69AB',
+					wood: '#6E4C41',
+					window: '#D6BCFA',
+					sky: '#86BBD8'
 				}
 			},
 			borderRadius: {
@@ -84,11 +94,26 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				fly: {
+					'0%': { transform: 'translateX(0) translateY(0) rotate(0)' },
+					'100%': { transform: 'translateX(200px) translateY(-200px) rotate(15deg)' }
+				},
+				floating: {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' }
+				},
+				pulse: {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.7' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fly': 'fly 3s forwards',
+				'floating': 'floating 3s ease-in-out infinite',
+				'pulse': 'pulse 2s ease-in-out infinite'
 			}
 		}
 	},
